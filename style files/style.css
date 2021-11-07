@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#ulNavBar {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+}
+
+#FooterId {
+    position: fixed;
+    width: 100vw;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+
+}
