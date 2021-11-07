@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies in Cards</title>
+    <title>Table Page</title>
     <link rel="stylesheet" href="../style files/style.css">
 </head>
 
@@ -25,30 +25,19 @@
 
 
     <main>
-        <div>
-            <button type="button" id="buttonOfSort">Sort By</button>
-            <select id="">
-                <option value="NameSelectValue">Name</option>
-                <option value="RatingSelectValue">Rating</option>
-                <option value="NameSelectValue">Add lately</option>
-            </select>
-
-
-            <button type="button">Search</button>
-            <select id="">
-                <option value="movieByNameValue">Movie By Name</option>
-                <option value="bestMoviesValue">Best Movie</option>
-                <option value="lastMovieAddValue">Added Lately</option>
-            </select>
-            <input type="text" id="inputOfSearch">
+        <div id="container">
+            <table id="tableID">
+                <tr id="TR_firstLineOfTable">
+                    <th>Movie name</th>
+                    <th>Image</th>
+                    <th>Link to movie</th>
+                    <th>Rating</th>
+                    <th>Synopsis</th>
+                    <th>ID</th>
+                    <th>Date</th>
+                </tr>
+            </table>
         </div>
-
-
-
-
-
-        <div id="divOfInfo"></div>
-
 
     </main>
 
@@ -70,6 +59,6 @@
     </footer>
 
 </body>
-<script src="../js flies/Cardmain.js"></script>
+<script src="../js flies/tablePage.js"></script>
 
 </html>
