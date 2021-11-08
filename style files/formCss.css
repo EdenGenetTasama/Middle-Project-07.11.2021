@@ -1,0 +1,23 @@
+#FormId{
+    display: flex;
+flex-direction: column;
+align-items: center;
+margin: 5%;
+}
+
+.inputClass{
+    width: 40%;
+    padding: 1%;
+}
+
+.lableClass{
+    padding:2%;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#sendEditButton{
+    padding:1%;
+    margin: 4%;
+
+}

@@ -7,17 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies in Cards</title>
     <link rel="stylesheet" href="../style files/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Henny+Penny&family=Inconsolata:wght@700&family=Permanent+Marker&family=Titan+One&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
 
     <header>
+        <div id="divOfNavImage">
+            <img src="../images/טק קריירה.jpeg" id="techImage">
+            <Img src="../images/אינדי.jpeg" id="indiImage">
+        </div>
         <nav>
             <ul id="ulNavBar">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../pagesIndex.html/cardMovies.html">Movies in Cards</a></li>
-                <li><a href="../pagesIndex.html/tablePage.html">Movies in Table</a></li>
-                <li><a href="">Add page</a></li>
+                <li class="classNav"><a href="../index.html">Home</a></li>
+                <li class="classNav"><a href="../pagesIndex.html/cardMovies.html">Movies in Cards</a></li>
+                <li class="classNav"><a href="../pagesIndex.html/tablePage.html">Movies in Table</a></li>
+                <li class="classNav"><a href="../pagesIndex.html/addPage.html">Add page</a></li>
             </ul>
         </nav>
     </header>
@@ -25,22 +33,20 @@
 
 
     <main>
-        <div>
-            <button type="button" id="buttonOfSort">Sort By</button>
-            <select id="">
+        <div id="divOfinputAndSearch">
+            <input type="text" id="inputOfSearch">
+
+
+            <select id="selectOption">
                 <option value="NameSelectValue">Name</option>
                 <option value="RatingSelectValue">Rating</option>
-                <option value="NameSelectValue">Add lately</option>
+                <option value="addLatelySelectValue">Add lately</option>
             </select>
 
+            <button type="button" id="buttonOfSort">Sort By</button>
 
-            <button type="button">Search</button>
-            <select id="">
-                <option value="movieByNameValue">Movie By Name</option>
-                <option value="bestMoviesValue">Best Movie</option>
-                <option value="lastMovieAddValue">Added Lately</option>
-            </select>
-            <input type="text" id="inputOfSearch">
+
+
         </div>
 
 
@@ -55,16 +61,16 @@
 
     <footer id="FooterId">
         <a href="">
-            <p>FaceBook</p>
+            <img src="../images/Facebook_icon.png" class="footerImg">
         </a>
         <a href="">
-            <p>LinkDin</p>
+            <img src="../images/linkdinNew.jpg" class="footerImg">
         </a>
         <a href="">
-            <p>Twitter</p>
+            <img src="../images/twitweerNew.jpg" class="footerImg">
         </a>
         <a href="">
-            <p>Instagram</p>
+            <img src="../images/insaNew.jpg" class="footerImg">
         </a>
 
     </footer>

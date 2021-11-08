@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Page</title>
+    <title>Add Page</title>
     <link rel="stylesheet" href="../style files/style.css">
+    <link rel="stylesheet" href="../style files/formCss.css">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Henny+Penny&family=Inconsolata:wght@700&family=Permanent+Marker&family=Titan+One&display=swap" rel="stylesheet">
 
 </head>
@@ -14,16 +15,16 @@
 <body>
 
     <header>
-        <div id="divOfNavImage">
-            <img src="../images/טק קריירה.jpeg" id="techImage">
-            <Img src="../images/אינדי.jpeg" id="indiImage">
-        </div>
         <nav>
+            <div id="divOfNavImage">
+                <img src="../images/טק קריירה.jpeg" id="techImage">
+                <Img src="../images/אינדי.jpeg" id="indiImage">
+            </div>
             <ul id="ulNavBar">
                 <li  class="classNav"><a href="../index.html">Home</a></li>
                 <li  class="classNav"><a href="../pagesIndex.html/cardMovies.html">Movies in Cards</a></li>
                 <li  class="classNav"><a href="../pagesIndex.html/tablePage.html">Movies in Table</a></li>
-                <li  class="classNav"><a href="">Add page</a></li>
+                <li  class="classNav"><a href="../pagesIndex.html/addPage.html">Add Info</a></li>
             </ul>
         </nav>
     </header>
@@ -31,19 +32,30 @@
 
 
     <main>
-        <div id="container">
-            <table id="tableID">
-                <tr id="TR_firstLineOfTable">
-                    <th class="headerTH">Movie name</th>
-                    <th class="headerTH">Image</th>
-                    <th class="headerTH">Link to movie</th>
-                    <th class="headerTH">Rating</th>
-                    <th class="headerTH">Synopsis</th>
-                    <th class="headerTH">ID</th>
-                    <th class="headerTH">Date</th>
-                </tr>
-            </table>
-        </div>
+
+
+        <form onsubmit="submit" id="FormId">
+            <label for="" class="lableClass">Movie Name :</label>
+            <input type="text" class="inputClass" id="movieNameId">
+
+            <label for="" class="lableClass">Movie rating :</label>
+            <input type="number" class="inputClass" id="ratingId">
+
+
+            <label for="" class="lableClass">Movie Image :</label>
+            <input type="url" class="inputClass" id="MovieImageId">
+
+
+            <label for="" class="lableClass">Movie Synopsis :</label>
+            <input type="text" class="inputClass" id="SynopsisId">
+
+            <label for="" class="lableClass">Link to movie</label>
+            <input type="number" class="inputClass" id="linkToMovieId">
+
+            <button id="sendEditButton" type="button">Send Edit</button>
+        </form>
+
+
 
     </main>
 
@@ -65,6 +77,6 @@
     </footer>
 
 </body>
-<script src="../js flies/tablePage.js"></script>
+<script src="../js flies/formAdd.js"></script>
 
 </html>
