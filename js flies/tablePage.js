@@ -2,7 +2,7 @@ const apiMainURLTablePage = "https://moviesmern.herokuapp.com/";
 let tableID = document.getElementById("tableID");
 
 function loadingGif() {
-    container.innerHTML += `<img src="../images/loading gif.gif" id="gifId">`;
+    container.innerHTML = '<img src="../images/loading gif.gif" id="gifId">';
 }
 
 function stopLoading() {
@@ -40,4 +40,4 @@ function tableShowFunction(arrayOfObject) {
 getAllMovies(apiMainURLTablePage, "movies/all")
   .then((res) => tableShowFunction(res))
   .catch((rej) => console.log(rej))
-//   .finally(stopLoading());
+  .finally(stopLoading());
