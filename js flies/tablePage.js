@@ -24,10 +24,10 @@ function tableShowFunction(arrayOfObject) {
     tableID.innerHTML += `
     <tr>
         <td>${item.movieName}</td>
-        <td>${item.image}</td><br>
+        <td>${item.image}</td>
         <td>${item.linkToMovie}</td>
         <td>${item.rating}</td>
-        <td>${item.synopsis}</td><br>
+        <td>${item.synopsis}</td>
         <td>${item._id}</td>
         <td>${item.date}</td>
     </tr>

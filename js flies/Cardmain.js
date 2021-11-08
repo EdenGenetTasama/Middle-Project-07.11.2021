@@ -34,7 +34,7 @@ function runAllArrayOfObject(arrayOfObject) {
   }
 }
 
-// getAllMovies().then((res) => runAllArrayOfObject(res));
+getAllMovies().then((res) => runAllArrayOfObject(res));
 
 function editClick(id) {
   console.log(id);
@@ -42,6 +42,39 @@ function editClick(id) {
     "file:///C:/Users/edent/OneDrive/%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%94%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%98%D7%A7%20%D7%A7%D7%A8%D7%99%D7%99%D7%A8%D7%94/%D7%9E%D7%91%D7%97%D7%A0%D7%99%D7%9D%20%D7%95%D7%94%D7%92%D7%A9%D7%95%D7%AA/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%D7%99%D7%9D/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%20%D7%90%D7%AA%D7%A8%20%D7%A1%D7%A8%D7%98%D7%99%D7%9D%207.11.2021/pagesIndex.html/addPage.html"
   );
 }
+
+
+async function deleteFromApi(idToDelete , optionDelete) {
+  try {
+    return await fetch(`https://moviesmern.herokuapp.com//movies/movie/${idToDelete}` , optionDelete)
+  } catch (error) {
+    return error
+  }
+}
+
+class DeleteClass {
+  movieName;
+  rating;
+  image;
+  Synopsis;
+  linkToMovie;
+  constructor(_movieName, _rating, _image, _Synopsis, _linkToMovie) {
+    this.movieName = _movieName;
+    this.rating = _rating;
+    this.image = _image;
+    this.Synopsis = _Synopsis;
+    this.linkToMovie = _linkToMovie;
+  }
+}
+
+
+
+const optionDelete = {
+  method: "DELETE",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(newMovie),
+};
+
 
 //! search select;
 
@@ -63,26 +96,13 @@ async function searchById(idInput) {
   }
 }
 
-function showSearchByName(object) {
-  for (const item of object.data) {
-    console.log(item);
-    divOfInfo.innerHTML += `<article class="cardClass">
-    <img src="${item.image}" id="imgOfInfo">
-    <h1 class="nameTitle">${item.movieName}</h1>
-    <p>${item.rating}</p>
-    <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick(this.id)">EDIT</button>
-    <button id="learnMore${item._id}" class="buttonStyleCard" onclick="">LEARN MORE</button>
-    <button id="delete${item._id}" class="buttonStyleCard" onclick="">DELETE</button>
-  
-    </article>`;
-  }
-}
+
 inputOfSearch.oninput = () => {
   if (inputOfSearch.value.length <= 3) divOfInfo.innerHTML = " ";
   if (inputOfSearch.value.length > 3) {
 
     searchByName(inputOfSearch.value)
-      .then((res) => showSearchByName(res))
+      .then((res) => runAllArrayOfObject(res.data))
 
   }
 };

@@ -20,6 +20,35 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 2000); 
 }
 
+
+
+divImageOnHomePage.innerHTML = 
+`
+<div class="divOfImageShow">
+<img src="../פרוייקט אתר סרטים 7.11.2021/images2/funny.png">
+<div class="hoverCap">Funny</div>
+</div>
+
+
+<div class="divOfImageShow">
+<img src="../פרוייקט אתר סרטים 7.11.2021/images2/romantiv.jpg">
+<div class="hoverCap">Romantic</div>
+</div> 
+
+
+<div class="divOfImageShow">
+<img src="../פרוייקט אתר סרטים 7.11.2021/images2/exsion.jpg">
+<div class="hoverCap">Action</div>
+
+</div>
+
+<div class="divOfImageShow">
+<img src="../פרוייקט אתר סרטים 7.11.2021/images2/doco.jpg">
+<div class="hoverCap">Documentary</div>
+</div>
+`
+
+//! <img src="../פרוייקט אתר סרטים 7.11.2021/images/romantic.jpg">
