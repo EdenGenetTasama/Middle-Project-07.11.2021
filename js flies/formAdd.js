@@ -18,7 +18,7 @@ class NewMovie {
     this.movieName = _movieName;
     this.rating = _rating;
     this.image = _image;
-    this.Synopsis = _Synopsis;
+    this.synopsis = _Synopsis;
     this.linkToMovie = _linkToMovie;
   }
 }
@@ -33,13 +33,10 @@ sendEditButton.onclick = () => {
     );
     const optionAdd = {
         method: "POST",
+        body: JSON.stringify({newMovie}),
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newMovie),
     };
-    console.log(optionAdd);
+    console.log(optionAdd.body);
     GetApiAddress(optionAdd).then(res=>console.log(res))
 };
 
-// GetApiAddress(apiAddress)
-//   .then((res) => console.log(res))
-//   .then((rej) => console.log(rej));

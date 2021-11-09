@@ -1,4 +1,4 @@
-let data ={
+let movieArray ={
   success: true,
   data: [
     {
@@ -54,16 +54,6 @@ let data ={
         "Spider-Man: Far From Home was released on July 2, 2019.[266][267] Watts returned to direct,[268] from a script by McKenna and Sommers.[269] Holland, Favreau, Zendaya, Tomei, and Batalon reprise their roles,[270][271] with Jake Gyllenhaal joining as Mysterio.[272] Samuel L. Jackson and Cobie Smulders also reprised their roles as Nick Fury and Maria Hill, respectively, from previous MCU media.[273]",
       linkToMovie: "https://en.wikipedia.org/wiki/Spider-Man:_No_Way_Home",
       date: "2021-11-07T14:52:22.181Z",
-      __v: 0,
-    },
-    {
-      _id: "6188dba3675c3c001675e536",
-      date: "2021-11-08T08:11:15.428Z",
-      __v: 0,
-    },
-    {
-      _id: "6188e0f1675c3c001675ec16",
-      date: "2021-11-08T08:33:53.369Z",
       __v: 0,
     },
   ],
