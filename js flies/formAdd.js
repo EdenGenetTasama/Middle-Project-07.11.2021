@@ -12,7 +12,7 @@ class NewMovie {
   movieName;
   rating;
   image;
-  Synopsis;
+  synopsis;
   linkToMovie;
   constructor(_movieName, _rating, _image, _Synopsis, _linkToMovie) {
     this.movieName = _movieName;

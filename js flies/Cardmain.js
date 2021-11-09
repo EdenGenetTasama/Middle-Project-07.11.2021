@@ -64,7 +64,7 @@ const apiMainURL = "https://moviesmern.herokuapp.com/";
 let arrayOFObject = JSON.stringify(movieArray);
 
 let arrayOFObjectTwo = JSON.parse(arrayOFObject);
-console.log(arrayOFObjectTwo);
+// console.log(arrayOFObjectTwo);
 
 function promiseFunction(api, src) {
   return new Promise((resolve, reject) => {
@@ -111,8 +111,6 @@ function runAllArrayOfObject(arrayOfObject) {
 
 function showOnlyOneAtTime(arrayOfObject) {
   for (const item of arrayOfObject) {
-    // if (item.name || item.image || item.rating == undefined) console.log(item);
-    // console.log(item);
     divOfInfo.innerHTML = `<article class="cardClass">
     <img src="${item.image}" id="imgOfInfo">
     <h1 class="nameTitle">${item.movieName}</h1>
@@ -127,9 +125,6 @@ function showOnlyOneAtTime(arrayOfObject) {
 }
 
 getAllMovies().then((res) => runAllArrayOfObject(res));
-// testFunction(arrayOFObject).then((res) => runAllArrayOfObject(res));
-
-// runAllArrayOfObject(arrayOFObjectTwo)
 
 function editClick(id) {
   console.log(id);
@@ -203,74 +198,49 @@ inputOfSearch.oninput = () => {
   }
 };
 
-//! sort select;
-// let array= [45,12,5,69,8,2,66]
-// console.log(array.sort((a,b)=>a-b));
-
-// function sortFunction(arrayOfObject) {
-//   for (const item of arrayOfObject.data) {
-//     if(item.rating > )
-
-//   }
-
-// }
-
 //!sort function
-// function sortFuncrion(obj) {
-//   obj.data.sort(function (a, b) {
-//     return (a.rating) - (b.rating);
-//   });
-//   divOfInfo.innerHTML = " ";
-//   divOfInfo.innerHTML = divOfInfo.innerHTML = `<article class="cardClass">
-//   <img src="${item.image}" id="imgOfInfo">
-//   <h1 class="nameTitle">${item.movieName}</h1>
-//   <p>${item.rating}</p>
-//   <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick(this.id)">EDIT</button>
-//   <button id="learnMore${item._id}" class="buttonStyleCard" onclick="">LEARN MORE</button>
-//   <button id="delete${item._id}" class="buttonStyleCard" onclick="">DELETE</button>
-
-//   </article>
-//   `;
-// }
 
 function displayAllInfoByRating(info) {
   let arraySort = info.sort(function (a, b) {
-    return b.rating - a.rating;
+    return (b.rating) - (a.rating);
   });
-  return showAfterSort(arraySort);
+
+  return runAllArrayOfObject(arraySort) ;
 }
 
-function showAfterSort(sortArray) {
-  for (let item of sortArray) {
-    divOfInfo.innerHTML = " ";
-    divOfInfo.innerHTML += `<article class="cardClass">
-    //   <img src="${item.image}" id="imgOfInfo">
-    //   <h1 class="nameTitle">${item.movieName}</h1>
-    //   <p>${item.rating}</p>
-    //   <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick(this.id)">EDIT</button>
-    //   <button id="learnMore${item._id}" class="buttonStyleCard" onclick="">LEARN MORE</button>
-    //   <button id="delete${item._id}" class="buttonStyleCard" onclick="">DELETE</button>
-    
-    //   </article>`;
-  }
+
+
+function sortByName(info) {
+  let arraySort = info.sort(function (a, b) {
+    return (b.movieName) - (a.movieName);
+  });
+
+  console.log(arraySort);
 }
+
+
 
 buttonOfSort.onclick = () => {
   let selectOptionSort = selectOption.value;
-  // console.log(selectOptionSort);
+
   switch (selectOptionSort) {
     case "NameSelectValue":
-      getAllMovies(apiMainURL, `/movies /movie/:${NameSelectValue}`)
-        .then()
-        .catch();
-      console.log("NameSelectValue");
+      // getAllMovies(apiMainURL, `/movies /movie/:${NameSelectValue}`)
+      //   .then()
+      //   .catch();
+      // console.log("NameSelectValue");
+      testFunction(movieArray.data.movieName).then((res) => {
+        sortByName(res);
+      });
 
     case "RatingSelectValue":
+      // testFunction(arrayOFObjectTwo.data).then((res) => {
+      //   displayAllInfoByRating(res);
+      // });
+      
       getAllMovies().then((res) => {
         displayAllInfoByRating(res);
       });
-      console.log("RatingSelectValue");
-
       break;
 
     case "addLatelySelectValue":

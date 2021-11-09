@@ -234,3 +234,9 @@ a {
     font-weight: bold;
     font-size: 20px;
 }
+
+.buttonStyleCard{
+    font-size: 25px;
+    padding: 1%;
+    border: 2px solid black;
+}
