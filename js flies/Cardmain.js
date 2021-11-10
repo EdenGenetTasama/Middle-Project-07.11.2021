@@ -99,7 +99,7 @@ function runAllArrayOfObject(arrayOfObject) {
     divOfInfo.innerHTML += `<article class="cardClass">
     <img src="${item.image}" id="imgOfInfo">
     <h1 class="nameTitle">${item.movieName}</h1>
-    <p>${item.rating}</p>
+    <p id="ratingNumber">${item.rating}</p>
     <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick(this.id)">EDIT</button>
     <button id="learnMore${item._id}" class="buttonStyleCard" onclick="">LEARN MORE</button>
     <button id="delete${item._id}" class="buttonStyleCard" onclick="">DELETE</button>

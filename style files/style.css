@@ -62,6 +62,7 @@ a {
 .nameTitle {
     font-weight: bold;
     font-size: 35px;
+
 }
 
 #NameSelectValue, #RatingSelectValue, #addLatelySelectValue {
@@ -116,14 +117,10 @@ a {
     border: 2px solid wheat;
 }
 
-
-.tableID{
+.tableID {
     width: 100% !important;
     font-family: 'Nixie One', cursive;
-    
-} 
-
-
+}
 
 #TR_firstLineOfTable {
     width: 12%;
@@ -131,7 +128,6 @@ a {
     /* /* border: 2px solid wheat; */
     font-size: 20px;
 }
-
 
 #paraOfIntro {
     width: 90%;
@@ -147,15 +143,11 @@ a {
     padding: 5%;
 }
 
-
-
 #divImageOnHomePage {
     display: flex;
     justify-content: space-between;
     margin-bottom: 3%;
 }
-
-
 
 #newwestMovieTitle {
     font-family: 'Kurale', serif;
@@ -165,23 +157,20 @@ a {
     padding: 2%;
 }
 
-
-
 .divOfImageShow {
     position: relative;
     max-width: 500px;
-  }
-  
+}
 
-  .divOfImageShow img { width: 100%;
+.divOfImageShow img {
+    width: 100%;
     width: 300px;
     height: 300px;
     /* border: 2px solid white; } */
     border-radius: 15%;
-  }
-  
+}
 
-  .hoverCap {
+.hoverCap {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -191,52 +180,64 @@ a {
     /* (C3) COLORS */
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-  }
+}
 
-  .hoverCap {
+.hoverCap {
     visibility: none;
     opacity: 0;
     transition: opacity 0.3s;
     font-size: 35px;
-  }
-  .divOfImageShow:hover .hoverCap {
+}
+
+.divOfImageShow:hover .hoverCap {
     visibility: visible;
     opacity: 1;
-    box-shadow:  3px 3px 5px 6px #ccce;
+    box-shadow: 3px 3px 5px 6px #ccce;
     text-align: center;
     border-radius: 15%;
-  }
-
+}
 
 /* table scc */
 
-#container{
+#container {
     width: 100%;
     height: 100%;
 }
 
-.headerTH{
+.headerTH {
     font-size: 40px;
     text-align: center;
     font-weight: bold;
 }
 
-#tableID , #TR_firstLineOfTable{
+#tableID, #TR_firstLineOfTable {
     width: 100%;
 }
 
-.tdClass{
+.tdClass {
     text-align: center;
     border: 3px solid wheat;
 }
 
-.tdClassHader{
+.tdClassHader {
     font-weight: bold;
     font-size: 20px;
 }
 
-.buttonStyleCard{
+.buttonStyleCard {
     font-size: 25px;
     padding: 1%;
-    border: 2px solid black;
+    text-align: center;
+width: 100%;
+}
+
+.buttonStyleCard:hover {
+    transition: ease-in-out;
+    color: blue;
+    font-size: 28px;
+}
+
+#ratingNumber{
+    font-size: 30px;
+    text-align: center;
 }
