@@ -2,9 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url("../images/background.jpeg");
     color: wheat;
     direction: ltr;
+
+
+}
+
+body {
+    background-image: url("../images/background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #ulNavBar {
@@ -34,7 +41,7 @@ a {
     display: flex;
     flex-direction: row;
     padding: 3px;
-    /* background-color: wheat !important; */
+    background-color: #850505 ;
     color: white;
 }
 
@@ -45,10 +52,10 @@ a {
 }
 
 .cardClass {
-    border: 1px solid wheat;
+    /* border: 1px solid wheat; */
     flex-direction: column;
     width: 30%;
-    height: 10%;
+    height: 15%;
     margin: 1%;
     padding: 0.5%;
 }
@@ -60,9 +67,10 @@ a {
 }
 
 .nameTitle {
+    font-family: 'Kurale', serif;
     font-weight: bold;
     font-size: 35px;
-
+    text-align: center;
 }
 
 #NameSelectValue, #RatingSelectValue, #addLatelySelectValue {
@@ -95,31 +103,35 @@ a {
     width: 60px;
     height: 50px;
     border-radius: 10%;
+
 }
 
 #inputOfSearch {
     width: 30%;
     padding: 10px;
-    border: 4px solid rgb(241, 184, 76);
+    border: 2px solid red;
     border-radius: 10%;
 }
 
+#inputOfSearch[type=text] {
+    background-color: black;
+}
 #divOfinputAndSearch {
     display: flex;
-    /* justify-content: space-around; */
+
     flex-direction: column;
     align-items: center;
+    
 }
 
 #selectOption, #buttonOfSort {
     width: 30%;
     padding: 10px;
-    border: 2px solid wheat;
-}
+    border: 2px solid #850505;
+    border-radius: 10%;
+    background-color: black;
+    text-align: center;
 
-.tableID {
-    width: 100% !important;
-    font-family: 'Nixie One', cursive;
 }
 
 #TR_firstLineOfTable {
@@ -135,6 +147,7 @@ a {
     font-weight: bold;
     font-size: 22px;
     text-align: center;
+    font-family: 'Kurale', serif;
 }
 
 #divOfIntro {
@@ -155,8 +168,11 @@ a {
     font-size: 55px;
     font-weight: bold;
     padding: 2%;
+    
 }
-
+#newwestMovieTitle:hover{
+color: #850505 ;
+}
 .divOfImageShow {
     position: relative;
     max-width: 500px;
@@ -208,47 +224,87 @@ a {
     font-size: 40px;
     text-align: center;
     font-weight: bold;
+    font-family: 'Kurale', serif;
+border: 1px solid wheat;
+
 }
 
-#tableID, #TR_firstLineOfTable {
+#TR_firstLineOfTable {
+    background-color: black;
+border: 1px solid wheat;
     width: 100%;
 }
 
 .tdClass {
+    background-color: black;
+    /* opacity: 0.5; */
     text-align: center;
-    border: 3px solid wheat;
+    border: 2px solid wheat;
+    font-weight: bold;
+    font-family: 'Kurale', serif;
+    
 }
 
 .tdClassHader {
+    background-color: black;
+
     font-weight: bold;
     font-size: 20px;
+    font-family: 'Kurale', serif;
+    border: 1px solid wheat;
 }
 
 .buttonStyleCard {
+    background-image: url("../images/background.jpeg");
+    font-family: 'Kurale', serif;
     font-size: 25px;
     padding: 1%;
     text-align: center;
-width: 100%;
+    width: 100%;
+    border-radius: 10%;
+    border-bottom: wheat;
+  
 }
 
 .buttonStyleCard:hover {
     transition: ease-in-out;
-    color: blue;
+    color: #850505;
     font-size: 28px;
 }
 
-#ratingNumber{
+#ratingNumber {
+    font-weight: bold;
+    padding: 2%;
     font-size: 30px;
     text-align: center;
 }
 
-span{
+span {
     font-size: 70px;
-    color:red;
+    color: #850505;
 }
 
-#sendEditButton{
+#sendEditButton {
     font-size: 30px;
     color: wheat;
     font-weight: bold;
+}
+
+@media screen and (min-device-width:10px) and (max-device-width:420px){
+    #tableID{
+        width: 100%;
+    }
+    #FooterId{
+        width: 100%;
+
+    }
+
+    body{
+        width: 100%;
+
+    }
+}
+
+#gifIMG{
+    width: 100%;
 }

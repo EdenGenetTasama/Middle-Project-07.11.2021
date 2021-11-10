@@ -61,6 +61,7 @@ let movieArray = {
 
 const apiMainURL = "https://moviesmern.herokuapp.com/";
 
+
 let arrayOFObject = JSON.stringify(movieArray);
 
 let arrayOFObjectTwo = JSON.parse(arrayOFObject);
@@ -76,8 +77,19 @@ function promiseFunction(api, src) {
   });
 }
 
+function gifLoadingGIF() {
+  divOfInfo.innerHTML=`<img src="../images/loading gif.gif" alt="GIF" id="gifIMG">`;
+
+}
+
+function stopGif() {
+  gifIMG.style.display = "none";
+}
+
+
 async function getAllMovies() {
   try {
+    gifLoadingGIF()
     return await promiseFunction(apiMainURL, "movies/all");
   } catch (error) {
     return error;
@@ -100,9 +112,9 @@ function runAllArrayOfObject(arrayOfObject) {
     <img src="${item.image}" id="imgOfInfo">
     <h1 class="nameTitle">${item.movieName}</h1>
     <p id="ratingNumber">${item.rating}</p>
-    <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick(this.id)">EDIT</button>
-    <button id="learnMore${item._id}" class="buttonStyleCard" onclick="">LEARN MORE</button>
-    <button id="delete${item._id}" class="buttonStyleCard" onclick="">DELETE</button>
+    <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick()">EDIT</button>
+    <button id="learnMore${item._id}" class="buttonStyleCard" onclick="learnMore()">LEARN MORE</button>
+    <button id="${item._id}" class="buttonStyleCard" onclick="CallDelete(this.id)">DELETE</button>
     
     </article>
     `;
@@ -115,59 +127,48 @@ function showOnlyOneAtTime(arrayOfObject) {
     <img src="${item.image}" id="imgOfInfo">
     <h1 class="nameTitle">${item.movieName}</h1>
     <p>${item.rating}</p>
-    <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick(this.id)">EDIT</button>
-    <button id="learnMore${item._id}" class="buttonStyleCard" onclick="">LEARN MORE</button>
-    <button id="delete${item._id}" class="buttonStyleCard" onclick="">DELETE</button>
+    <button  class="buttonStyleCard" onclick="editClick()">EDIT</button>
+    <button id="learnMore${item._id}" class="buttonStyleCard" onclick="learnMore()">LEARN MORE</button>
+    <button  class="buttonStyleCard" onclick="CallDelete("${item._id}")">DELETE</button>
     
     </article>
     `;
   }
 }
 
-getAllMovies().then((res) => runAllArrayOfObject(res));
+getAllMovies().then((res) => runAllArrayOfObject(res)).finally(stopGif);
 
-function editClick(id) {
-  console.log(id);
-  window.open(
-    "file:///C:/Users/edent/OneDrive/%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%94%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%98%D7%A7%20%D7%A7%D7%A8%D7%99%D7%99%D7%A8%D7%94/%D7%9E%D7%91%D7%97%D7%A0%D7%99%D7%9D%20%D7%95%D7%94%D7%92%D7%A9%D7%95%D7%AA/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%D7%99%D7%9D/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%20%D7%90%D7%AA%D7%A8%20%D7%A1%D7%A8%D7%98%D7%99%D7%9D%207.11.2021/pagesIndex.html/addPage.html"
-  );
+function editClick() {
+window.open("file:///C:/Users/edent/OneDrive/%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%94%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%98%D7%A7%20%D7%A7%D7%A8%D7%99%D7%99%D7%A8%D7%94/%D7%9E%D7%91%D7%97%D7%A0%D7%99%D7%9D%20%D7%95%D7%94%D7%92%D7%A9%D7%95%D7%AA/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%D7%99%D7%9D/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%20%D7%90%D7%AA%D7%A8%20%D7%A1%D7%A8%D7%98%D7%99%D7%9D%207.11.2021/pagesIndex.html/addPage.html")
+  
+}
+
+function learnMore() {
+  window.open("file:///C:/Users/edent/OneDrive/%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%94%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%98%D7%A7%20%D7%A7%D7%A8%D7%99%D7%99%D7%A8%D7%94/%D7%9E%D7%91%D7%97%D7%A0%D7%99%D7%9D%20%D7%95%D7%94%D7%92%D7%A9%D7%95%D7%AA/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%D7%99%D7%9D/%D7%A4%D7%A8%D7%95%D7%99%D7%99%D7%A7%D7%98%20%D7%90%D7%AA%D7%A8%20%D7%A1%D7%A8%D7%98%D7%99%D7%9D%207.11.2021/pagesIndex.html/popWindowLearn.html", 'newwin', 'height=500px,width=400px');
 }
 
 async function deleteFromApi(idToDelete, optionDelete) {
   try {
     return await fetch(
-      `https://moviesmern.herokuapp.com//movies/movie/${idToDelete}`,
+      "https://moviesmern.herokuapp.com//movies/movie/"+idToDelete,
       optionDelete
-    );
+    ).then(res=>res.json());
   } catch (error) {
     return error;
   }
 }
 
-// buttonStyleCard.onclick=()=>{
-//   console.log("click");
-//   class DeleteClass {
-//     movieName;
-//     rating;
-//     image;
-//     Synopsis;
-//     linkToMovie;
-//     constructor(_movieName, _rating, _image, _Synopsis, _linkToMovie) {
-//       this.movieName = _movieName;
-//       this.rating = _rating;
-//       this.image = _image;
-//       this.Synopsis = _Synopsis;
-//       this.linkToMovie = _linkToMovie;
-//     }
-//   }
-//   let deleteMovie = new DeleteClass();
-//   const optionDelete = {
-//     method: "DELETE",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(newMovie),
-//   }
 
+  function CallDelete(id){
+    const options={
+        method:`DELETE`,
+    }
+    deleteFromApi(id,options).then(res=>console.log(res))
+    console.log(options);
+};
+  // deleteFromApi(`${optionDelete[_id]}`, optionDelete).then((res) => console.log(res));
 // }
+
 
 //! search select;
 
@@ -181,13 +182,13 @@ async function searchByName(nameInput) {
   }
 }
 
-async function searchById(idInput) {
-  try {
-    return await fetch(`${apiMainURL}movies/movie/${idInput}'`);
-  } catch (error) {
-    return error;
-  }
-}
+// async function searchById(idInput) {
+//   try {
+//     return await fetch(`${apiMainURL}movies/movie/${idInput}'`);
+//   } catch (error) {
+//     return error;
+//   }
+// }
 
 inputOfSearch.oninput = () => {
   if (inputOfSearch.value.length < 3) divOfInfo.innerHTML = " ";
@@ -202,49 +203,48 @@ inputOfSearch.oninput = () => {
 
 function displayAllInfoByRating(info) {
   let arraySort = info.sort(function (a, b) {
-    return (b.rating) - (a.rating);
+    return b.rating - a.rating;
   });
 
-  return runAllArrayOfObject(arraySort) ;
+  return runAllArrayOfObject(arraySort);
 }
-
-
 
 function sortByName(info) {
   let arraySort = info.sort(function (a, b) {
-    return (b.movieName) - (a.movieName);
+    return b.date - a.date;
   });
 
   console.log(arraySort);
 }
 
-
-
 buttonOfSort.onclick = () => {
   let selectOptionSort = selectOption.value;
-
   switch (selectOptionSort) {
     case "NameSelectValue":
       // getAllMovies(apiMainURL, `/movies /movie/:${NameSelectValue}`)
       //   .then()
       //   .catch();
       // console.log("NameSelectValue");
-      testFunction(movieArray.data.movieName).then((res) => {
-        sortByName(res);
-      });
+      // getAllMovies(movieArray.data).then((res) => {
+      //   sortByName(res);
+      // });
 
     case "RatingSelectValue":
-      // testFunction(arrayOFObjectTwo.data).then((res) => {
+      divOfInfo.innerHTML= " "
+      getAllMovies(arrayOFObjectTwo.data).then((res) => {
+        displayAllInfoByRating(res)}).then(stopGif())
+   
+
+      // getAllMovies().then((res) => {
       //   displayAllInfoByRating(res);
       // });
-      
-      getAllMovies().then((res) => {
-        displayAllInfoByRating(res);
-      });
       break;
 
-    case "addLatelySelectValue":
-      console.log("addLatelySelectValue9");
+    // case "addLatelySelectValue":
+    //   testFunction(movieArray.data).then((res) => {
+    //     sortByName(res);
+    //   });
+    //   console.log("addLatelySelectValue9");
 
       break;
 
