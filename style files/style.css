@@ -241,3 +241,14 @@ width: 100%;
     font-size: 30px;
     text-align: center;
 }
+
+span{
+    font-size: 70px;
+    color:red;
+}
+
+#sendEditButton{
+    font-size: 30px;
+    color: wheat;
+    font-weight: bold;
+}
