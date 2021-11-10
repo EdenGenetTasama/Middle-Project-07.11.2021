@@ -74,7 +74,6 @@ function stopLoading() {
 
 async function getAllMovies(api) {
   try {
-    loadingGif()
     // return await fetch(`${api}${src}`).then((res) => res.json());
     return await api 
   } catch (error) {
@@ -103,10 +102,10 @@ function tableShowFunction(arrayOfObject) {
 
 // getAllMovies(apiMainURLTablePage, "movies/all")
 
-getAllMovies(movieArray)
+getAllMovies(movieArray).then(  loadingGif())
   .then((res) => tableShowFunction(res))
   .catch((rej) => console.log(rej))
-  .finally(stopLoading());
+  .finally(stopLoading);
 
 
   

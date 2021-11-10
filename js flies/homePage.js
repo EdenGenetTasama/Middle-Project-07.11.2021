@@ -27,7 +27,7 @@ function showSlides() {
 
 divImageOnHomePage.innerHTML = 
 `
-<div class="divOfImageShow">
+<div class="divOfImageShow"><a href="https://www.facebook.com/eden.tas">
 <img src="../פרוייקט אתר סרטים 7.11.2021/images2/funny.png">
 <div class="hoverCap">Funny</div>
 </div>

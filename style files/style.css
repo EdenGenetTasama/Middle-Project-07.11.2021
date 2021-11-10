@@ -4,8 +4,6 @@
     box-sizing: border-box;
     color: wheat;
     direction: ltr;
-
-
 }
 
 body {
@@ -41,7 +39,7 @@ a {
     display: flex;
     flex-direction: row;
     padding: 3px;
-    background-color: #850505 ;
+    background-color: #850505;
     color: white;
 }
 
@@ -103,7 +101,6 @@ a {
     width: 60px;
     height: 50px;
     border-radius: 10%;
-
 }
 
 #inputOfSearch {
@@ -116,12 +113,11 @@ a {
 #inputOfSearch[type=text] {
     background-color: black;
 }
+
 #divOfinputAndSearch {
     display: flex;
-
     flex-direction: column;
     align-items: center;
-    
 }
 
 #selectOption, #buttonOfSort {
@@ -131,7 +127,6 @@ a {
     border-radius: 10%;
     background-color: black;
     text-align: center;
-
 }
 
 #TR_firstLineOfTable {
@@ -168,11 +163,12 @@ a {
     font-size: 55px;
     font-weight: bold;
     padding: 2%;
-    
 }
-#newwestMovieTitle:hover{
-color: #850505 ;
+
+#newwestMovieTitle:hover {
+    color: #850505;
 }
+
 .divOfImageShow {
     position: relative;
     max-width: 500px;
@@ -225,13 +221,12 @@ color: #850505 ;
     text-align: center;
     font-weight: bold;
     font-family: 'Kurale', serif;
-border: 1px solid wheat;
-
+    border: 1px solid wheat;
 }
 
 #TR_firstLineOfTable {
     background-color: black;
-border: 1px solid wheat;
+    border: 1px solid wheat;
     width: 100%;
 }
 
@@ -242,12 +237,10 @@ border: 1px solid wheat;
     border: 2px solid wheat;
     font-weight: bold;
     font-family: 'Kurale', serif;
-    
 }
 
 .tdClassHader {
     background-color: black;
-
     font-weight: bold;
     font-size: 20px;
     font-family: 'Kurale', serif;
@@ -263,7 +256,6 @@ border: 1px solid wheat;
     width: 100%;
     border-radius: 10%;
     border-bottom: wheat;
-  
 }
 
 .buttonStyleCard:hover {
@@ -290,21 +282,58 @@ span {
     font-weight: bold;
 }
 
-@media screen and (min-device-width:10px) and (max-device-width:420px){
-    #tableID{
+@media screen and (min-device-width:10px) and (max-device-width:420px) {
+    #tableID {
         width: 100%;
     }
-    #FooterId{
+    #FooterId {
         width: 100%;
-
     }
-
-    body{
+    body {
         width: 100%;
-
     }
 }
 
-#gifIMG{
+#gifIMG {
+    width:700px;
+    width: 700px;
+
+  
+}
+
+#imageOfId{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#titelMovieNamepop {
+    font-size: 80px;
+    text-align: center;
+    font-family: 'Galada', cursive;
+    font-weight: bold;
+}
+
+#ratingDatepop {
+    font-family: 'Oregano', cursive;
+    font-size: 60px;
+    text-align: center;
+    
+}
+
+#synopsisPop {
+    font-family: 'Oregano', cursive;
+    font-size: 40px;
     width: 100%;
+}
+
+#imagePop {
+    width: 400px;
+    height: 400px;
 }

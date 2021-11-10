@@ -7,34 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop window</title>
     <link rel="stylesheet" href="../style files/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&family=Galada&family=Oregano&family=Rammetto+One&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <nav>
-
-
-    </nav>
-
-    <main>
 
 
 
-    </main>
+<main>
 
-    <footer>
+    <div id="title">
 
+    </div>
 
+</main>
 
-    </footer>
-
-
-
-
-    <script>
+<footer>
 
 
 
-    </script>
+</footer>
+
+
+
+
+<script>
+
+    function gifLoadingGIF() {
+        title.innerHTML = `<div id="imageOfId"><img src="../images/loading gif.gif" alt="GIF" id="gifIMG"></div>`;
+      }
+      
+      function stopGif() {
+        title.style.display = "none";
+      }
+
+
+    async function getData(id) {
+        try {
+            gifLoadingGIF()
+            return await fetch(`https://moviesmern.herokuapp.com/movies/movie/${id}`).then((response) => response.json());
+
+        } catch (error) {
+            return error;
+        }
+    }
+    let movieId = location.search.substr(4);
+
+
+    getData(movieId).then((movie) => {
+        title.innerHTML = `
+              <h3 id="titelMovieNamepop"><b>${movie.data.movieName} <b></h3>
+                <img id="imagePop" src="${movie.data.image}">
+              <h3 id="ratingDatepop"><b>Score: ${movie.data.rating}<b></h3>
+              <h3 id="synopsisPop"><b>${movie.data.synopsis} <b></h3>
+             `;
+        console.log(movieId)
+    });
+</script>
 </body>
 
 </html>
