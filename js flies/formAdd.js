@@ -24,7 +24,7 @@ class NewMovie {
 }
 
 sendEditButton.onclick = () => {
-  let newMovie = new NewMovie(
+  let movie = new NewMovie(
     movieNameId.value,
     ratingId.value,
     MovieImageId.value,
@@ -33,10 +33,11 @@ sendEditButton.onclick = () => {
     );
     const optionAdd = {
         method: "POST",
-        body: JSON.stringify({newMovie}),
+        body: JSON.stringify({movie}),
         headers: { "Content-Type": "application/json" },
     };
-    console.log(optionAdd.body);
+
+    alert("Movie added successfully ☻")
     GetApiAddress(optionAdd).then(res=>console.log(res))
 };
 

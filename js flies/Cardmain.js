@@ -154,10 +154,10 @@ function learnMore() {
 async function deleteFromApi(idToDelete, optionDelete) {
   try {
     return await fetch(
-      "https://moviesmern.herokuapp.com//movies/movie/" + idToDelete,
+      "https://moviesmern.herokuapp.com/movies/movie/" + idToDelete,
       optionDelete
     )
-    .then((res) => {
+    .then(res => {
       res.json();
     });
   } catch (error) {
@@ -169,11 +169,10 @@ function CallDelete(id) {
   const options = {
     method: `DELETE`,
   };
-  deleteFromApi(id, options).then((res) => console.log(res));
+  deleteFromApi(id, options)
   console.log(options);
 }
-// deleteFromApi(`${optionDelete[_id]}`, optionDelete).then((res) => console.log(res));
-// }
+
 
 //! search select;
 
