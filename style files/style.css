@@ -285,7 +285,16 @@ span {
     font-size: 30px;
     color: wheat;
     font-weight: bold;
+    color: #850505;
+    background-color: wheat;
 }
+
+
+#sendEditButton:hover{
+padding: 0.5%;
+transition: ease-in-out;
+transition-duration: 0.1s;
+;}
 
 @media screen and (min-device-width:10px) and (max-device-width:420px) {
     #tableID {

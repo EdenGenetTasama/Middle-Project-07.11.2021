@@ -105,7 +105,7 @@ function tableShowFunction(arrayOfObject) {
 getAllMovies(movieArray).then(  loadingGif())
   .then((res) => tableShowFunction(res))
   .catch((rej) => console.log(rej))
-  .finally(stopLoading);
+  .finally(stopLoading());
 
 
   

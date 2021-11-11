@@ -109,7 +109,7 @@ function runAllArrayOfObject(arrayOfObject) {
     <img src="${item.image}" id="imgOfInfo">
     <h1 class="nameTitle">${item.movieName}</h1>
     <p id="ratingNumber">${item.rating}</p>
-    <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick()">EDIT</button>
+    <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick()">ADD NEW</button>
     <a href ="./popWindowLearn.html?id=${item._id}">  <button id="learnMore${item._id}" class="buttonStyleCard" >LEARN MORE</button></a>
     <button id="${item._id}" class="buttonStyleCard" onclick="CallDelete(this.id)">DELETE</button>
     
@@ -124,7 +124,7 @@ function showOnlyOneAtTime(arrayOfObject) {
     <img src="${item.image}" id="imgOfInfo">
     <h1 class="nameTitle">${item.movieName}</h1>
     <p>${item.rating}</p>
-    <button  class="buttonStyleCard" onclick="editClick()">EDIT</button>
+    <button  class="buttonStyleCard" onclick="editClick()">ADD NEW</button>
     <a href ="./data.html?id=${item._id}">  <button id="learnMore${item._id}" class="buttonStyleCard" >LEARN MORE</button></a>
     <button  class="buttonStyleCard" onclick="CallDelete("${item._id}")">DELETE</button>
     
