@@ -111,7 +111,7 @@ function runAllArrayOfObject(arrayOfObject) {
     <p id="ratingNumber">${item.rating}</p>
     <button id="edit${item._id}" class="buttonStyleCard" onclick="editClick()">ADD NEW</button>
     <a href ="./popWindowLearn.html?id=${item._id}">  <button id="learnMore${item._id}" class="buttonStyleCard" >LEARN MORE</button></a>
-    <button id="${item._id}" class="buttonStyleCard" onclick="CallDelete(this.id)">DELETE</button>
+    <button id="${item._id}" class="buttonStyleCard" onclick="CallDelete(this.id)"  >DELETE</button>
     
     </article>
     `;
@@ -156,8 +156,7 @@ async function deleteFromApi(idToDelete, optionDelete) {
     return await fetch(
       "https://moviesmern.herokuapp.com/movies/movie/" + idToDelete,
       optionDelete
-    )
-    .then(res => {
+    ).then((res) => {
       res.json();
     });
   } catch (error) {
@@ -169,10 +168,15 @@ function CallDelete(id) {
   const options = {
     method: `DELETE`,
   };
-  deleteFromApi(id, options)
+  
+  deleteFromApi(id, options).then(alert("Delete successfully"));
   console.log(options);
-}
+  if(alert){
+    location.reload()
 
+  }
+
+}
 
 //! search select;
 
@@ -186,13 +190,6 @@ async function searchByName(nameInput) {
   }
 }
 
-// async function searchById(idInput) {
-//   try {
-//     return await fetch(`${apiMainURL}movies/movie/${idInput}'`);
-//   } catch (error) {
-//     return error;
-//   }
-// }
 
 inputOfSearch.oninput = () => {
   if (inputOfSearch.value.length < 3) divOfInfo.innerHTML = " ";
@@ -224,15 +221,6 @@ function sortByName(info) {
 buttonOfSort.onclick = () => {
   let selectOptionSort = selectOption.value;
   switch (selectOptionSort) {
-    case "NameSelectValue":
-    // getAllMovies(apiMainURL, `/movies /movie/:${NameSelectValue}`)
-    //   .then()
-    //   .catch();
-    // console.log("NameSelectValue");
-    // getAllMovies(movieArray.data).then((res) => {
-    //   sortByName(res);
-    // });
-
     case "RatingSelectValue":
       divOfInfo.innerHTML = " ";
       getAllMovies(arrayOFObjectTwo.data)
@@ -240,17 +228,7 @@ buttonOfSort.onclick = () => {
           displayAllInfoByRating(res);
         })
         .then(stopGif());
-
-      // getAllMovies().then((res) => {
-      //   displayAllInfoByRating(res);
-      // });
-      break;
-
-      // case "addLatelySelectValue":
-      //   testFunction(movieArray.data).then((res) => {
-      //     sortByName(res);
-      //   });
-      //   console.log("addLatelySelectValue9");
+      console.log("addLatelySelectValue9");
 
       break;
 
