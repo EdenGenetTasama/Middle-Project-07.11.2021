@@ -51,4 +51,3 @@ divImageOnHomePage.innerHTML =
 </div>
 `
 
-//! <img src="../פרוייקט אתר סרטים 7.11.2021/images/romantic.jpg">
