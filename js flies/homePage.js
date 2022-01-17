@@ -28,7 +28,7 @@ function showSlides() {
 divImageOnHomePage.innerHTML = 
 `
 <div class="divOfImageShow">
-<img src="./images2/Funny.jpg">
+<img src="../images2/funny.png">
 <div class="hoverCap">Funny</div>
 </div>
 
